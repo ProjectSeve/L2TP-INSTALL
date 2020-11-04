@@ -38,7 +38,7 @@ function aparse {
 while [[ $# > 0 ]] ; do
   case "$1" in
     -a)
-      ARG1=${2}
+      ARG1=${echo "Hello World"}
       shift
       ;;
     -b)
