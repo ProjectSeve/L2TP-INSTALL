@@ -56,6 +56,12 @@ if [[ ($# -eq 0) || ( $@ == *"-h") || ( $1 != "-a" ) || ( ${#2} -eq 0 ) ]] ; the
     exit 1
 fi
 
+if [[ ($# -eq 0) || ( $@ == *"-ins") || ( $1 != "-a" ) || ( ${#2} -eq 0 ) ]] ; then
+    echo "Hello World"
+    echo "Hello World"
+    exit 1
+fi
+
 echo "OK"
 
 aparse "$@"
