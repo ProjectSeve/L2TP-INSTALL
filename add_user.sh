@@ -19,10 +19,6 @@ magen="`tput setaf 5`"
 # START COMMAND
 clear
 # Print Info IN
-echo " ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
-echo " ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo " ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄"
-
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 SYS_DT=$(date +%F-%T | tr ':' '_')
 
@@ -73,14 +69,14 @@ clear
 
 cat <<EOF
 
-Welcome! This script will add or update an VPN user account
-for both IPsec/L2TP and IPsec/XAuth (Cisco IPsec).
+${cyan}Welcome! This script will add or update an VPN user account
+for both IPsec/L2TP and IPsec/XAuth (Cisco IPsec).${norm}
 
 ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀
 ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀
 ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄
 
-Please double check before continuing!
+${green}Please double check before continuing!${norm}
 
 ================================================
 
@@ -88,6 +84,8 @@ VPN user to add or update:
 
 Username: $VPN_USER
 Password: $VPN_PASSWORD
+
+${magen}Note: L2TP Pre-Shared Key Is Always: sevescripts${norm}
 
 Write these down. You'll need them to connect!
 
@@ -132,7 +130,7 @@ chmod 600 /etc/ppp/chap-secrets* /etc/ipsec.d/passwd*
 cat <<'EOF'
 Done!
 
-NOTE: L2TP PRESHARED KEY IS ALWAYS: sevescripts
+NOTE: L2TP Pre-Shared Key Is Always: sevescripts
 
 - SEVE SCRIPTS
 
