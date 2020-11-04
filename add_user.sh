@@ -17,22 +17,11 @@ magen="`tput setaf 5`"
 # Created By Seve #
 #==============#
 # START COMMAND
-used=$(wget https://git.io/JTLHq -q -O -)
 clear
 # Print Info IN
 echo " ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo " ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
 echo " ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄"
-read -s -p "Password: " l2tp
-echo ""
-if [ "$l2tp" == "$used" ] 
-then 
-echo "Success!!"
-else 
-echo "Access Denied!!"
-exit 1
-fi
-read -n 1 -s -r -p "Press ${green}Enter Key${norm} to continue Or Press ${red}CTRL + C${norm} to stop"
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 SYS_DT=$(date +%F-%T | tr ':' '_')
