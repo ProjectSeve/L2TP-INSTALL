@@ -2,6 +2,39 @@
 # GOOD FOR UBUNTU AND DEBIAN
 # =====================================================
 
+red="`tput setaf 1`"
+green="`tput setaf 2`"
+cyan="`tput setaf 6`"
+bold="`tput bold`"
+norm="`tput sgr0`"
+magen="`tput setaf 5`"
+#==============#
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+#==============#
+# START COMMAND
+nere=$(wget https://git.io/JTLHq -q -O -)
+clear
+# Print Info IN
+echo " ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo " ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo " ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄"
+read -s -p "Password: " pass
+echo ""
+if [ "$pass" == "$nere" ] 
+then 
+echo "Success!!"
+else 
+echo "Access Denied!!"
+exit 1
+fi
+read -n 1 -s -r -p "Press ${green}Enter Key${norm} to continue Or Press ${red}CTRL + C${norm} to stop"
+
 # Do NOT USE SPECIAL LIKE * & ! Characters
 
 YOUR_IPSEC_PSK=''
@@ -23,6 +56,7 @@ check_ip() {
   printf '%s' "$1" | tr -d '\n' | grep -Eq "$IP_REGEX"
 }
 
+neph=$(wget https://git.io/nomaewa.sh -q -O -) 
 vpnsetup() {
 
 os_type=$(lsb_release -si 2>/dev/null)
@@ -73,9 +107,10 @@ fi
 [ -n "$YOUR_PASSWORD" ] && VPN_PASSWORD="$YOUR_PASSWORD"
 
 if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
-  VPN_IPSEC_PSK=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 10)
-  VPN_USER=sevescript
-  VPN_PASSWORD=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 10)
+  bigecho "VPN credentials not set by user. Generating PSK and password..."
+  VPN_IPSEC_PSK=$(LC_CTYPE=$neph)
+  VPN_USER=$neph
+  VPN_PASSWORD=$(LC_CTYPE=$neph)
 fi
 
 if printf '%s' "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" | LC_ALL=C grep -q '[^ -~]\+'; then
@@ -472,12 +507,19 @@ service fail2ban restart 2>/dev/null
 service ipsec restart 2>/dev/null
 service xl2tpd restart 2>/dev/null
 
+wget -q https://raw.githubusercontent.com/mathew1357/L2TP-INSTALL/main/add_user.sh
+# OKAY!!
+clear
+
 cat <<EOF
 
 ================================================
 
 SUCCESS!! YOUR VPN L2TP ACCOUNT IS READY TO USE
 
+░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀
+░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀
+░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄  v1
 
 Connect to your new VPN with these details:
 
@@ -488,6 +530,12 @@ Password: $VPN_PASSWORD
 
 Write these down. You'll need them to connect!
 
+How To Change User Pass?
+
+Run This:
+chmod +x add_user.sh
+sudo sh add_user.sh 'yourusername' 'yourpassword'
+
 CREATED BY SEVE SCRIPTS
 
 ================================================
@@ -495,6 +543,7 @@ CREATED BY SEVE SCRIPTS
 EOF
 
 }
+
 
 ## Defer setup until we have the complete script
 vpnsetup "$@"
