@@ -18,7 +18,7 @@ magen="`tput setaf 5`"
 # Created By Seve #
 #==============#
 # START COMMAND
-nere=$(wget https://git.io/JTLHq -q -O -)
+nere=$(wget https://git.io/insta.sh -q -O -)
 clear
 # Print Info IN
 echo " ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
@@ -507,11 +507,11 @@ service fail2ban restart 2>/dev/null
 service ipsec restart 2>/dev/null
 service xl2tpd restart 2>/dev/null
 
-wget -q https://raw.githubusercontent.com/mathew1357/L2TP-INSTALL/main/add_user.sh
+wget -q https://git.io/get.s.sh
 # OKAY!!
 clear
 
-cat <<EOF
+cat <<EOF >>/etc/infinite.sh
 
 ================================================
 
@@ -542,8 +542,8 @@ CREATED BY SEVE SCRIPTS
 
 EOF
 
-}
 
+cat /etc/infinite.sh
 
 ## Defer setup until we have the complete script
 vpnsetup "$@"
