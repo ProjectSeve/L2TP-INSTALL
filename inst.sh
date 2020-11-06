@@ -23,7 +23,7 @@ clear
 # Print Info IN
 echo " ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo " ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo " ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄"
+echo " ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v1.beta"
 read -s -p "Password: " pass
 echo ""
 if [ "$pass" == "$nere" ] 
@@ -366,7 +366,7 @@ if ! grep -qs "hwdsl2 VPN script" /etc/sysctl.conf; then
   fi
 cat >> /etc/sysctl.conf <<EOF
 
-# Added by hwdsl2 VPN script
+# Added by SEVE SCRIPTS / ATSL
 kernel.msgmnb = 65536
 kernel.msgmax = 65536
 kernel.shmmax = $SHM_MAX
@@ -519,7 +519,7 @@ SUCCESS!! YOUR VPN L2TP ACCOUNT IS READY TO USE
 
 ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀
 ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀
-░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄  v1
+░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄  v1.beta
 
 Connect to your new VPN with these details:
 
