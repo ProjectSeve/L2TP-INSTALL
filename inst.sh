@@ -507,6 +507,12 @@ service fail2ban restart 2>/dev/null
 service ipsec restart 2>/dev/null
 service xl2tpd restart 2>/dev/null
 
+firsted="$1"
+sugoku="$(cat /etc/infinite.sh)"
+inform(){
+    echo "$sugoku"
+}
+
 wget -q https://git.io/get.s.sh
 # OKAY!!
 clear
@@ -531,6 +537,8 @@ Password: $VPN_PASSWORD
 Write these down. You'll need them to connect!
 
 How To Change User Pass?
+
+Info: ./l2tp-install.sh inform
 
 Run This:
 chmod +x add_user.sh
