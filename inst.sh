@@ -511,7 +511,7 @@ wget -q https://git.io/get.s.sh
 # OKAY!!
 clear
 
-cat <<EOF >>/etc/infinite.sh
+cat <<EOF >>/etc/infosq
 
 ================================================
 
@@ -543,10 +543,8 @@ CREATED BY SEVE SCRIPTS
 ================================================
 
 EOF
-
-
-cat /etc/infinite.sh
-
+cat /etc/infos
+}
 ## Defer setup until we have the complete script
 vpnsetup "$@"
 
