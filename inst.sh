@@ -56,7 +56,7 @@ check_ip() {
   printf '%s' "$1" | tr -d '\n' | grep -Eq "$IP_REGEX"
 }
 
-neph=$(wget https://git.io/nomaewa.sh -q -O -) 
+neph=sevescripts
 vpnsetup() {
 
 os_type=$(lsb_release -si 2>/dev/null)
@@ -108,9 +108,9 @@ fi
 
 if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
   bigecho "VPN credentials not set by user. Generating PSK and password..."
-  VPN_IPSEC_PSK=$(LC_CTYPE=$neph)
+  VPN_IPSEC_PSK=$(LC_CTYPE=sevescripts)
   VPN_USER=$neph
-  VPN_PASSWORD=$(LC_CTYPE=$neph)
+  VPN_PASSWORD=$(LC_CTYPE=sevescripts)
 fi
 
 if printf '%s' "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" | LC_ALL=C grep -q '[^ -~]\+'; then
@@ -543,7 +543,7 @@ CREATED BY SEVE SCRIPTS
 ================================================
 
 EOF
-cat /etc/infos
+cat /etc/infosq
 }
 ## Defer setup until we have the complete script
 vpnsetup "$@"
